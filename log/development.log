@@ -3328,3 +3328,35 @@ Started GET "/api/v1/merchants" for ::1 at 2016-04-11 17:16:15 -0600
 Processing by Api::V1::MerchantsController#index as JSON
   [1m[35mMerchant Load (0.9ms)[0m  SELECT "merchants".* FROM "merchants"
 Completed 200 OK in 58ms (Views: 42.2ms | ActiveRecord: 6.8ms)
+  [1m[36m (5046.7ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_development"[0m
+  [1m[35m (121.6ms)[0m  DROP DATABASE IF EXISTS "rails_engine_test"
+  [1m[36m (0.6ms)[0m  [1mCREATE DATABASE "rails_engine_development" ENCODING = 'unicode'[0m
+  [1m[35m (330.6ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.6ms)[0m  DROP TABLE "merchants" CASCADE
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "merchants" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "merchants" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (5.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411200157')
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (118.5ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_development"[0m
+  [1m[35m (120.2ms)[0m  DROP DATABASE IF EXISTS "rails_engine_test"
+  [1m[36m (257.0ms)[0m  [1mCREATE DATABASE "rails_engine_development" ENCODING = 'unicode'[0m
+  [1m[35m (236.8ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.3ms)[0m  CREATE TABLE "merchants" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411200157')
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.3ms)[0m  CREATE TABLE "merchants" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (1.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411200157')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

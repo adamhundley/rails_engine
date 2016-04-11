@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'pry-rails'
@@ -17,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development do
