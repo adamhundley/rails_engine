@@ -1,0 +1,70 @@
+  [1m[36m (118.6ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (277.5ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:46:09 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (119.7ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (314.9ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:48:20 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (119.7ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (313.9ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:52:07 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:52:07 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (117.1ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (314.2ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:52:41 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:52:41 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (116.8ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (324.0ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:53:18 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:53:18 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (118.4ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (307.8ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:06 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:06 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (118.4ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (299.9ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:24 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:24 -0600
+Processing by Api::V1::MerchantsController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (116.3ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (317.7ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:47 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:54:47 -0600
+Processing by Api::V1::MerchantsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (118.7ms)[0m  [1mDROP DATABASE IF EXISTS "rails_engine_test"[0m
+  [1m[35m (316.9ms)[0m  CREATE DATABASE "rails_engine_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:56:32 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants" for 127.0.0.1 at 2016-04-11 13:56:32 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
