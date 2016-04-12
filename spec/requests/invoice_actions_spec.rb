@@ -103,7 +103,7 @@ RSpec.describe "InvoiceActions", type: :request do
     end
 
     it "has 200 response code" do
-      get '/api/v1/invoices/find_all?name=test'
+      get '/api/v1/invoices/find_all?id=1'
       expect(response).to have_http_status(200)
     end
 

@@ -108,23 +108,23 @@ RSpec.describe "TransactionActions", type: :request do
     end
 
     it "has 200 response code" do
-      get '/api/v1/transactions/find_all?status=success'
+      get '/api/v1/transactions/find_all?result=success'
       expect(response).to have_http_status(200)
     end
 
     it "renders json" do
-      get '/api/v1/transactions/find_all?status=success'
+      get '/api/v1/transactions/find_all?result=success'
       expect(response.content_type).to eq("application/json")
     end
 
-    it "returns information on a transactions by status" do
-      get '/api/v1/transactions/find_all?status=shipped'
+    it "returns information on a transactions by result" do
+      get '/api/v1/transactions/find_all?result=success'
 
       transactions = json_body
 
       expect(transactions.count).to eq 2
-      expect(transactions.first[:status]).to eq(@transaction1[:status])
-      expect(transactions.last[:status]).to eq(@transaction2[:status])
+      expect(transactions.first[:result]).to eq(@transaction1[:result])
+      expect(transactions.last[:result]).to eq(@transaction2[:result])
       expect(transactions.first[:id]).to eq(@transaction1[:id])
       expect(transactions.last[:id]).to eq(@transaction2[:id])
     end
@@ -152,9 +152,9 @@ RSpec.describe "TransactionActions", type: :request do
 
       transaction = json_body
       ids = [@transaction1[:id], @transaction2[:id], @transaction3[:id]]
-      names = [@transaction1[:status], @transaction2[:status], @transaction3[:status]]
+      names = [@transaction1[:result], @transaction2[:result], @transaction3[:result]]
 
-      expect(names.include?(transaction[:status])).to eq(true)
+      expect(names.include?(transaction[:result])).to eq(true)
       expect(ids.include?(transaction[:id])).to eq(true)
     end
   end

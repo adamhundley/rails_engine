@@ -1,6 +1,5 @@
 class Finder
-  def self.find(controller, params)
-    model = controller.split('/')[-1].classify.constantize
+  def self.find(model, params)
     if params[:name]
       model.find_by("name ILIKE ?", params[:name])
     elsif params[:first_name]
@@ -14,8 +13,7 @@ class Finder
     end
   end
 
-  def self.find_all(controller, params)
-    model = controller.split('/')[-1].classify.constantize
+  def self.find_all(model, params)
     if params[:name]
       model.where("name ILIKE ?", params[:name])
     elsif params[:first_name]
@@ -29,8 +27,7 @@ class Finder
     end
   end
 
-  def self.random(controller)
-    model = controller.split('/')[-1].classify.constantize
+  def self.random(model)
     model.all.order("RANDOM()").first
   end
 
