@@ -2,7 +2,7 @@ module Api
   module V1
     class MerchantsController < ApiController
       respond_to :json
-      
+
       def index
         respond_with Merchant.all
       end
@@ -12,13 +12,16 @@ module Api
       end
 
       def find
-        respond_with Merchant.find_by(find_params)
+        respond_with MerchantFinder.find(merchant_params)
       end
 
+      def find_all
+        respond_with MerchantFinder.find_all(merchant_params)
+      end
 
       private
-        def find_params
-          params.permit(:id, :name)
+        def merchant_params
+          params.permit(:id, :name, :created_at, :updated_at)
         end
     end
   end
