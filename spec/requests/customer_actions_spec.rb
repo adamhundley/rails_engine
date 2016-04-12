@@ -104,16 +104,16 @@ RSpec.describe "CustomerActions", type: :request do
       @customer1 = create(:customer)
       @customer2 = create(:customer)
     end
-    #
-    # it "has 200 response code" do
-    #   get '/api/v1/customers/find_all?first_name=test'
-    #   expect(response).to have_http_status(200)
-    # end
-    #
-    # it "renders json" do
-    #   get '/api/v1/customers/find_all?id=1'
-    #   expect(response.content_type).to eq("application/json")
-    # end
+
+    it "has 200 response code" do
+      get '/api/v1/customers/find_all?first_name=test'
+      expect(response).to have_http_status(200)
+    end
+
+    it "renders json" do
+      get '/api/v1/customers/find_all?id=1'
+      expect(response.content_type).to eq("application/json")
+    end
 
     it "returns information on a customers by name without case sensitivity" do
       get '/api/v1/customers/find_all?last_name=test'
