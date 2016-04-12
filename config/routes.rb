@@ -7,9 +7,12 @@ Rails.application.routes.draw do
         get 'random', to: 'finder#random'
       end
       resources :merchants, only: [:index, :show]
-      get 'customers/find', to: 'customers#find'
-      get 'customers/find_all', to: 'customers#find_all'
-      get 'customers/random', to: 'customers#random'
+
+      namespace :customers do
+        get 'find', to: 'finder#show'
+        get 'find_all', to: 'finder#index'
+        get 'random', to: 'finder#random'
+      end
       resources :customers, only: [:index, :show]
       get 'items/find', to: 'items#find'
       get 'items/find_all', to: 'items#find_all'
