@@ -26,4 +26,5 @@ RSpec.describe Item, type: :model do
     expect(item).to be_instance_of Item
     expect(item).to be_valid
   end
+  
 end
