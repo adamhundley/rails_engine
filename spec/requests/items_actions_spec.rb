@@ -26,6 +26,7 @@ RSpec.describe "ItemsActions", type: :request do
       expect(parsed_item[:name]).to eq(@item[:name])
       expect(parsed_item[:unit_price]).to eq(@item[:unit_price])
       expect(parsed_item[:merchant_id]).to eq(@item[:merchant_id])
+      expect(parsed_item[:description]).to eq(@item[:description])
     end
   end
 
@@ -98,6 +99,14 @@ RSpec.describe "ItemsActions", type: :request do
 
       expect(item[:id]).to eq(@item[:id])
     end
+
+    it "returns information on a item by description" do
+      get "/api/v1/items/find?description=#{@item.description}"
+
+      item = json_body
+
+      expect(item[:description]).to eq(@item[:description])
+    end
   end
 
   describe "GET /api/v1/items/find_all?last_name=Cummings" do
@@ -126,6 +135,16 @@ RSpec.describe "ItemsActions", type: :request do
       expect(items.last[:name]).to eq(@item2[:name])
       expect(items.first[:id]).to eq(@item1[:id])
       expect(items.last[:id]).to eq(@item2[:id])
+    end
+
+    it "returns information on a items by description" do
+      get "/api/v1/items/find_all?description=#{@item1.description}"
+
+      items = json_body
+
+      expect(items.count).to eq 2
+      expect(items.first[:description]).to eq(@item1[:description])
+      expect(items.last[:description]).to eq(@item2[:description])
     end
   end
 
