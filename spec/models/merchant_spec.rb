@@ -10,4 +10,11 @@ RSpec.describe Merchant, type: :model do
 
     expect(Merchant.count).to eq 0
   end
+
+  it "should be valid" do
+    merchant = create(:merchant)
+
+    expect(merchant).to be_instance_of Merchant
+    expect(merchant).to be_valid 
+  end
 end
