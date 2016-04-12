@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/adamhundley/rails_engine.svg?branch=master)](https://travis-ci.org/adamhundley/rails_engine)
 ---
 title: Rales Engine
 length: 1 week
