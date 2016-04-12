@@ -19,6 +19,10 @@ module Api
         respond_with MerchantFinder.find_all(merchant_params)
       end
 
+      def random
+        respond_with MerchantFinder.random
+      end
+
       private
         def merchant_params
           params.permit(:id, :name, :created_at, :updated_at)
