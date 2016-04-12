@@ -1,5 +1,6 @@
 class AddDescriptionToItems < ActiveRecord::Migration
   def change
-    add_column :items, :description, :string
+    enable_extension("citext")
+    add_column :items, :description, :citext
   end
 end
