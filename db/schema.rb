@@ -73,10 +73,6 @@ ActiveRecord::Schema.define(version: 20160412154911) do
 
   add_index "transactions", ["invoice_id"], name: "index_transactions_on_invoice_id", using: :btree
 
-  add_foreign_key "invoice_items", "invoices"
-  add_foreign_key "invoice_items", "items"
-  add_foreign_key "invoices", "customers"
-  add_foreign_key "invoices", "merchants"
-  add_foreign_key "items", "merchants"
   add_foreign_key "transactions", "invoices"
+
 end

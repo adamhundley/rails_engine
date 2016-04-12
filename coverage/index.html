@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-12T11:03:13-06:00">2016-04-12T11:03:13-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-12T11:50:00-06:00">2016-04-12T11:50:00-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.03
+         2.02
        </span>
     </span> hits/line)
   </h2>
@@ -157,7 +157,7 @@
         <td>26</td>
         <td>24</td>
         <td>2</td>
-        <td>11.0</td>
+        <td>10.7</td>
       </tr>
       
       <tr>
@@ -1785,7 +1785,7 @@
         <li class="covered" data-hits="7" data-linenumber="28">
           <span class="hits">7</span>
           
-          <code class="ruby">          params.permit(:id, :invoice_id, :credit_card_number, :credit_card_expiration_date, :result, :created_at, :updated_at)</code>
+          <code class="ruby">          params.permit(:id, :name, :created_at, :updated_at)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -2232,14 +2232,14 @@
           <code class="ruby">    if params[:name]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">      model.find_by(&quot;name ILIKE ?&quot;, params[:name])</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="6">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="23" data-linenumber="6">
+          <span class="hits">23</span>
           
           <code class="ruby">    elsif params[:first_name]</code>
         </li>
@@ -2250,8 +2250,8 @@
           <code class="ruby">      model.find_by(&quot;first_name ILIKE ?&quot;, params[:first_name])</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="8">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="22" data-linenumber="8">
+          <span class="hits">22</span>
           
           <code class="ruby">    elsif params[:last_name]</code>
         </li>
@@ -2262,8 +2262,8 @@
           <code class="ruby">      model.find_by(&quot;last_name ILIKE ?&quot;, params[:last_name])</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="10">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="21" data-linenumber="10">
+          <span class="hits">21</span>
           
           <code class="ruby">    elsif params[:description]</code>
         </li>
@@ -2280,8 +2280,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="13">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="21" data-linenumber="13">
+          <span class="hits">21</span>
           
           <code class="ruby">      model.find_by(params)</code>
         </li>
@@ -2322,14 +2322,14 @@
           <code class="ruby">    if params[:name]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="20">
+          <span class="hits">4</span>
           
           <code class="ruby">      model.where(&quot;name ILIKE ?&quot;, params[:name])</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="21">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="14" data-linenumber="21">
+          <span class="hits">14</span>
           
           <code class="ruby">    elsif params[:first_name]</code>
         </li>
@@ -2340,8 +2340,8 @@
           <code class="ruby">      model.where(&quot;first_name ILIKE ?&quot;, params[:first_name])</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="23">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="13" data-linenumber="23">
+          <span class="hits">13</span>
           
           <code class="ruby">    elsif params[:last_name]</code>
         </li>
@@ -2352,8 +2352,8 @@
           <code class="ruby">      model.where(&quot;last_name ILIKE ?&quot;, params[:last_name])</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="25">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="25">
+          <span class="hits">12</span>
           
           <code class="ruby">    elsif params[:description]</code>
         </li>
@@ -2370,8 +2370,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="28">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="28">
+          <span class="hits">12</span>
           
           <code class="ruby">      model.where(params)</code>
         </li>
