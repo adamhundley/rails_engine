@@ -25,5 +25,10 @@ namespace :db do
                   created_at:  row["created_at"],
                   updated_at:  row["updated_at"])
     end
+
+    invoices = File.join Rails.root, "data/invoices.csv"
+    CSV.foreach(invoices, headers: true) do |row|
+      Invoice.create(row.to_h)
+    end
   end
 end
