@@ -121,4 +121,33 @@ RSpec.describe "Merchants", type: :request do
       expect(merchants.last[:id]).to eq(@merchant2[:id])
     end
   end
+
+  describe "GET /api/v1/merchants/random" do
+    before(:each) do
+      @merchant1 = create(:merchant)
+      @merchant2 = create(:merchant)
+      @merchant3 = create(:merchant)
+    end
+
+    it "has 200 response code" do
+      get '/api/v1/merchants/find_all?name=Test+Merchant'
+      expect(response).to have_http_status(200)
+    end
+
+    it "renders json" do
+      get '/api/v1/merchants/random'
+      expect(response.content_type).to eq("application/json")
+    end
+
+    it "returns information on a random merchant" do
+      get '/api/v1/merchants/random'
+
+      merchant = json_body
+      ids = [@merchant1[:id], @merchant2[:id], @merchant3[:id]]
+      names = [@merchant1[:name], @merchant2[:name], @merchant3[:name]]
+
+      expect(names.include?(merchant[:name])).to eq(true)
+      expect(ids.include?(merchant[:id])).to eq(true)
+    end
+  end
 end
