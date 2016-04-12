@@ -25,7 +25,7 @@ module Api
 
       private
         def merchant_params
-          params.permit(:id, :name, :created_at, :updated_at)
+          params.permit(:id, :invoice_id, :credit_card_number, :credit_card_expiration_date, :result, :created_at, :updated_at)
         end
 
         def controller
