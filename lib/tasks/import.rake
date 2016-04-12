@@ -30,5 +30,18 @@ namespace :db do
     CSV.foreach(invoices, headers: true) do |row|
       Invoice.create(row.to_h)
     end
+
+    invoice_items = File.join Rails.root, "data/invoice_items.csv"
+    CSV.foreach(invoice_items, headers: true) do |row|
+      unit_price = row["unit_price"].to_i / 100.to_f
+
+      InvoiceItem.create(id:          row["id"],
+                  item_id:     row["item_id"],
+                  invoice_id:  row["invoice_id"],
+                  unit_price:  unit_price,
+                  quantity:    row["quantity"],
+                  created_at:  row["created_at"],
+                  updated_at:  row["updated_at"])
+    end
   end
 end
