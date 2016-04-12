@@ -7,6 +7,8 @@ class Finder
       model.find_by("first_name ILIKE ?", params[:first_name])
     elsif params[:last_name]
       model.find_by("last_name ILIKE ?", params[:last_name])
+    elsif params[:description]
+      model.find_by("description ILIKE ?", params[:description])
     else
       model.find_by(params)
     end
@@ -20,6 +22,8 @@ class Finder
       model.where("first_name ILIKE ?", params[:first_name])
     elsif params[:last_name]
       model.where("last_name ILIKE ?", params[:last_name])
+    elsif params[:description]
+      model.where("description ILIKE ?", params[:description])
     else
       model.where(params)
     end

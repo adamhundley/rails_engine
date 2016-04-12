@@ -12,11 +12,11 @@ module Api
       end
 
       def find
-        respond_with Finder.find(controller,merchant_params)
+        respond_with Finder.find(controller, merchant_params)
       end
 
       def find_all
-        respond_with Finder.find_all(controller,merchant_params)
+        respond_with Finder.find_all(controller, merchant_params)
       end
 
       def random
