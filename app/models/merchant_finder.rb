@@ -14,4 +14,8 @@ class MerchantFinder
       Merchant.where(params)
     end
   end
+
+  def self.random
+    Merchant.all.order("RANDOM()").first
+  end
 end
