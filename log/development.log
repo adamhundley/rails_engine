@@ -3360,3 +3360,371 @@ Completed 200 OK in 58ms (Views: 42.2ms | ActiveRecord: 6.8ms)
   [1m[36m (1.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411200157')
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/api/v1/merchants/1" for ::1 at 2016-04-11 17:40:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.7ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 26ms (ActiveRecord: 9.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Merchant with 'id'=1):
+  app/controllers/api/v1/merchants_controller.rb:10:in `show'
+
+
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.0ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.4ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.1ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.0ms)
+
+
+Started GET "/api/v1/merchants/1.json" for ::1 at 2016-04-11 17:41:02 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Merchant with 'id'=1):
+  app/controllers/api/v1/merchants_controller.rb:10:in `show'
+
+
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.0ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.4ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/adamhundley/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.4ms)
+
+
+Started GET "/api/v1/merchants" for ::1 at 2016-04-11 17:41:17 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 1], ["name", "Schroeder-Jerde"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 2], ["name", "Klein, Rempel and Jones"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 3], ["name", "Willms and Sons"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 4], ["name", "Cummings-Thiel"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 5], ["name", "Williamson Group"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 6], ["name", "Williamson Group"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 16:12:25.000000"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 7], ["name", "Bernhard-Johns"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 8], ["name", "Osinski, Pollich and Koelpin"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 9], ["name", "Hand-Spencer"], ["created_at", "2012-03-27 14:53:59.000000"], ["updated_at", "2012-03-27 14:53:59.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 10], ["name", "Bechtelar, Jones and Stokes"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 11], ["name", "Pollich and Sons"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 12], ["name", "Kozey Group"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 13], ["name", "Tillman Group"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 14], ["name", "Dicki-Bednar"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 15], ["name", "Adams-Kovacek"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 16], ["name", "Bosco, Howe and Davis"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 17], ["name", "Ullrich-Moen"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 18], ["name", "Koepp LLC"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 19], ["name", "Brown Inc"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 20], ["name", "Schulist, Wilkinson and Leannon"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 21], ["name", "Leffler, Rice and Leuschke"], ["created_at", "2012-03-27 14:54:00.000000"], ["updated_at", "2012-03-27 14:54:00.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 22], ["name", "Thiel Inc"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 23], ["name", "Kilback Inc"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 24], ["name", "Ferry and Sons"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 25], ["name", "Hickle-Hessel"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 26], ["name", "Balistreri, Schaefer and Kshlerin"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 27], ["name", "Shields, Hirthe and Smith"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 28], ["name", "Schiller, Barrows and Parker"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 29], ["name", "Tromp Inc"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 30], ["name", "Ernser, Borer and Marks"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 31], ["name", "Maggio LLC"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 32], ["name", "Rowe and Sons"], ["created_at", "2012-03-27 14:54:01.000000"], ["updated_at", "2012-03-27 14:54:01.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 33], ["name", "Quitzon and Sons"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 34], ["name", "Rutherford, Bogan and Leannon"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 35], ["name", "Schuster Group"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 36], ["name", "Bernhard, Stanton and Funk"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 37], ["name", "Dibbert Group"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 38], ["name", "Johnston, Gleason and O'Keefe"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 39], ["name", "Schuppe, Friesen and Schmeler"], ["created_at", "2012-03-27 14:54:02.000000"], ["updated_at", "2012-03-27 14:54:02.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 40], ["name", "Wilderman Group"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 41], ["name", "Crona LLC"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 42], ["name", "Glover Inc"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 43], ["name", "Marks, Shanahan and Bauch"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 44], ["name", "Gibson Group"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 45], ["name", "Dickinson-Klein"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 46], ["name", "Huels, Homenick and Smith"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 47], ["name", "Franecki-Ullrich"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 48], ["name", "Hand, Boyer and Mitchell"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 49], ["name", "Marvin, Renner and Bauch"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 50], ["name", "Nader-Hyatt"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 51], ["name", "Paucek Inc"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 52], ["name", "Reynolds Inc"], ["created_at", "2012-03-27 14:54:03.000000"], ["updated_at", "2012-03-27 14:54:03.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 53], ["name", "Rath, Gleason and Spencer"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 54], ["name", "Zemlak-Collins"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 55], ["name", "Koch, Wolf and Jerde"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 56], ["name", "Sporer, Christiansen and Connelly"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 57], ["name", "Parisian Group"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 58], ["name", "Rogahn LLC"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 59], ["name", "Pollich, Romaguera and Bayer"], ["created_at", "2012-03-27 14:54:04.000000"], ["updated_at", "2012-03-27 14:54:04.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 60], ["name", "Smitham LLC"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 61], ["name", "Auer, Crooks and Shanahan"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 62], ["name", "Kunze, Kautzer and Little"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 63], ["name", "Lehner, Padberg and O'Hara"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 64], ["name", "Koepp, Waelchi and Donnelly"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 65], ["name", "Hermann, Weimann and Botsford"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 66], ["name", "Bechtelar LLC"], ["created_at", "2012-03-27 14:54:05.000000"], ["updated_at", "2012-03-27 14:54:05.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 67], ["name", "Torp and Sons"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 68], ["name", "Heaney Group"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 69], ["name", "Watsica-Parisian"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 70], ["name", "Weimann-Schimmel"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 71], ["name", "Schulist Group"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 72], ["name", "Greenfelder-Keebler"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 73], ["name", "Sipes LLC"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 74], ["name", "Daugherty Group"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 75], ["name", "Eichmann-Turcotte"], ["created_at", "2012-03-27 14:54:06.000000"], ["updated_at", "2012-03-27 14:54:06.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 76], ["name", "Kirlin, Jakubowski and Smitham"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 77], ["name", "Kutch, Blick and O'Keefe"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 78], ["name", "Heathcote-Hettinger"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 79], ["name", "Pacocha-Mayer"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 80], ["name", "Jakubowski, Predovic and Hudson"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 81], ["name", "Jewess Group"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 82], ["name", "Kulas LLC"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 83], ["name", "Gulgowski, Torphy and Lynch"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 84], ["name", "Terry-Moore"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 85], ["name", "Sauer and Sons"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 86], ["name", "Marvin Group"], ["created_at", "2012-03-27 14:54:07.000000"], ["updated_at", "2012-03-27 14:54:07.000000"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 87], ["name", "Johnson-Wiza"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 88], ["name", "Kiehn Group"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 89], ["name", "Kassulke, O'Hara and Quitzon"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 90], ["name", "Friesen, Hackett and Runte"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 91], ["name", "Weissnat, Hermiston and Beer"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 92], ["name", "Zemlak, Volkman and Haley"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 93], ["name", "Walter-Schowalter"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 94], ["name", "Boehm LLC"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 95], ["name", "Johnson-Dickinson"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 96], ["name", "Swaniawski-Cremin"], ["created_at", "2012-03-27 14:54:08.000000"], ["updated_at", "2012-03-27 14:54:08.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 97], ["name", "Rice, Jerde and White"], ["created_at", "2012-03-27 14:54:09.000000"], ["updated_at", "2012-03-27 14:54:09.000000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 98], ["name", "Okuneva, Prohaska and Rolfson"], ["created_at", "2012-03-27 14:54:09.000000"], ["updated_at", "2012-03-27 14:54:09.000000"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 99], ["name", "Fahey-Stiedemann"], ["created_at", "2012-03-27 14:54:09.000000"], ["updated_at", "2012-03-27 14:54:09.000000"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "merchants" ("id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 100], ["name", "Wisozk, Hoeger and Bosco"], ["created_at", "2012-03-27 14:54:09.000000"], ["updated_at", "2012-03-27 14:54:09.000000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/api/v1/merchants" for ::1 at 2016-04-11 17:41:39 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.8ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 66ms (Views: 58.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/merchants/1" for ::1 at 2016-04-11 17:41:43 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 0.5ms)
