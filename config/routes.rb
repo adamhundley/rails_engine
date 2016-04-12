@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
+      
       namespace :merchants do
         get 'find', to: 'finder#show'
         get 'find_all', to: 'finder#index'
@@ -14,10 +15,14 @@ Rails.application.routes.draw do
         get 'random', to: 'finder#random'
       end
       resources :customers, only: [:index, :show]
-      get 'items/find', to: 'items#find'
-      get 'items/find_all', to: 'items#find_all'
-      get 'items/random', to: 'items#random'
+
+      namespace :items do
+        get 'find', to: 'finder#show'
+        get 'find_all', to: 'finder#index'
+        get 'random', to: 'finder#random'
+      end
       resources :items, only: [:index, :show]
+
       get 'invoices/find', to: 'invoices#find'
       get 'invoices/find_all', to: 'invoices#find_all'
       get 'invoices/random', to: 'invoices#random'

@@ -5,4 +5,8 @@ class Item < ActiveRecord::Base
 
   default_scope { order(id: :asc) }
 
+  def self.random
+    all.order("RANDOM()").first
+  end
+
 end
