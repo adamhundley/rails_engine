@@ -43,5 +43,15 @@ namespace :db do
                   created_at:  row["created_at"],
                   updated_at:  row["updated_at"])
     end
+
+    transactions = File.join Rails.root, "data/transactions.csv"
+    CSV.foreach(transactions, headers: true) do |row|
+      Transaction.create(id:          row["id"],
+                  invoice_id:         row["invoice_id"],
+                  credit_card_number: row["credit_card_number"],
+                  result:             row["result"],
+                  created_at:         row["created_at"],
+                  updated_at:         row["updated_at"])
+    end
   end
 end
