@@ -1241,3 +1241,2083 @@ Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
   [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
   [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
   [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:35:44.642368"], ["updated_at", "2016-04-11 23:35:44.642368"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:35:44.687048"], ["updated_at", "2016-04-11 23:35:44.687048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:35:44 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.6ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:04.869375"], ["updated_at", "2016-04-11 23:36:04.869375"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:04.933264"], ["updated_at", "2016-04-11 23:36:04.933264"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:04 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.9ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.0ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.1ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:25.076592"], ["updated_at", "2016-04-11 23:36:25.076592"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:25.136340"], ["updated_at", "2016-04-11 23:36:25.136340"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.1ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (1.1ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.0ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:42.073453"], ["updated_at", "2016-04-11 23:36:42.073453"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:36:42.127500"], ["updated_at", "2016-04-11 23:36:42.127500"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:36:42 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:37:10.569798"], ["updated_at", "2016-04-11 23:37:10.569798"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'rails_engine_test'[0m
+  [1m[35m (3.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "merchants"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:10 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (4.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:10 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:37:10.695575"], ["updated_at", "2016-04-11 23:37:10.695575"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:10 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:37:10 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.0ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (1.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 16ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:37:25.930068"], ["updated_at", "2016-04-11 23:37:25.930068"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:37:25 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:37:25.949250"], ["updated_at", "2016-04-11 23:37:25.949250"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:37:25 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:21.288976"], ["updated_at", "2016-04-11 23:39:21.288976"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:21 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.7ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 22ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:21.349822"], ["updated_at", "2016-04-11 23:39:21.349822"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:21 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:21.367448"], ["updated_at", "2016-04-11 23:39:21.367448"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:21 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:21.384873"], ["updated_at", "2016-04-11 23:39:21.384873"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:39:21 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (3.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:38.692201"], ["updated_at", "2016-04-11 23:39:38.692201"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 14ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:38.749828"], ["updated_at", "2016-04-11 23:39:38.749828"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:38.767816"], ["updated_at", "2016-04-11 23:39:38.767816"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:39:38 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (3.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:50.922936"], ["updated_at", "2016-04-11 23:39:50.922936"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:50 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 23ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (5.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:50.996793"], ["updated_at", "2016-04-11 23:39:50.996793"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:51 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:51.027786"], ["updated_at", "2016-04-11 23:39:51.027786"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:39:51 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (1.1ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (13.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:39:51.072019"], ["updated_at", "2016-04-11 23:39:51.072019"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:39:51 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.8ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:00.672887"], ["updated_at", "2016-04-11 23:40:00.672887"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:00 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:00.722787"], ["updated_at", "2016-04-11 23:40:00.722787"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:00 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:00.739223"], ["updated_at", "2016-04-11 23:40:00.739223"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:00 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:00.756919"], ["updated_at", "2016-04-11 23:40:00.756919"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:40:00 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.2ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:00.785124"], ["updated_at", "2016-04-11 23:40:00.785124"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:40:00 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:37.997861"], ["updated_at", "2016-04-11 23:40:37.997861"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:38.046283"], ["updated_at", "2016-04-11 23:40:38.046283"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:38.062710"], ["updated_at", "2016-04-11 23:40:38.062710"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:38.080168"], ["updated_at", "2016-04-11 23:40:38.080168"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:38.106031"], ["updated_at", "2016-04-11 23:40:38.106031"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:40:38.123302"], ["updated_at", "2016-04-11 23:40:38.123302"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:40:38 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:40.917906"], ["updated_at", "2016-04-11 23:53:40.917906"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:53:40 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:40.976499"], ["updated_at", "2016-04-11 23:53:40.976499"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:53:40 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:40.990302"], ["updated_at", "2016-04-11 23:53:40.990302"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:53:40 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:41.004230"], ["updated_at", "2016-04-11 23:53:41.004230"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:53:41 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:41.029560"], ["updated_at", "2016-04-11 23:53:41.029560"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:53:41 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:53:41.044405"], ["updated_at", "2016-04-11 23:53:41.044405"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:53:41 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.2ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.391750"], ["updated_at", "2016-04-11 23:59:49.391750"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.448531"], ["updated_at", "2016-04-11 23:59:49.448531"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.465163"], ["updated_at", "2016-04-11 23:59:49.465163"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.483616"], ["updated_at", "2016-04-11 23:59:49.483616"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.509082"], ["updated_at", "2016-04-11 23:59:49.509082"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-11 23:59:49.527224"], ["updated_at", "2016-04-11 23:59:49.527224"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 17:59:49 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.1ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (3.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.404586"], ["updated_at", "2016-04-12 00:01:08.404586"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.459750"], ["updated_at", "2016-04-12 00:01:08.459750"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.477149"], ["updated_at", "2016-04-12 00:01:08.477149"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.494411"], ["updated_at", "2016-04-12 00:01:08.494411"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.519855"], ["updated_at", "2016-04-12 00:01:08.519855"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:08.536625"], ["updated_at", "2016-04-12 00:01:08.536625"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.737718"], ["updated_at", "2016-04-12 00:01:26.737718"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.785859"], ["updated_at", "2016-04-12 00:01:26.785859"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.802148"], ["updated_at", "2016-04-12 00:01:26.802148"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.819075"], ["updated_at", "2016-04-12 00:01:26.819075"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.846081"], ["updated_at", "2016-04-12 00:01:26.846081"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:26.862912"], ["updated_at", "2016-04-12 00:01:26.862912"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:26 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.802535"], ["updated_at", "2016-04-12 00:01:59.802535"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.6ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.850282"], ["updated_at", "2016-04-12 00:01:59.850282"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.866049"], ["updated_at", "2016-04-12 00:01:59.866049"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.882353"], ["updated_at", "2016-04-12 00:01:59.882353"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.2ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.908306"], ["updated_at", "2016-04-12 00:01:59.908306"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:01:59.924186"], ["updated_at", "2016-04-12 00:01:59.924186"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:01:59 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.6ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.028619"], ["updated_at", "2016-04-12 00:02:08.028619"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 16ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.081736"], ["updated_at", "2016-04-12 00:02:08.081736"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.097828"], ["updated_at", "2016-04-12 00:02:08.097828"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.112911"], ["updated_at", "2016-04-12 00:02:08.112911"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.2ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.2ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.136839"], ["updated_at", "2016-04-12 00:02:08.136839"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:08.153462"], ["updated_at", "2016-04-12 00:02:08.153462"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:08 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.370717"], ["updated_at", "2016-04-12 00:02:51.370717"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.418342"], ["updated_at", "2016-04-12 00:02:51.418342"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.434683"], ["updated_at", "2016-04-12 00:02:51.434683"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.451321"], ["updated_at", "2016-04-12 00:02:51.451321"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.477561"], ["updated_at", "2016-04-12 00:02:51.477561"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:02:51.494191"], ["updated_at", "2016-04-12 00:02:51.494191"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:02:51 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (3.8ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.544665"], ["updated_at", "2016-04-12 00:03:20.544665"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 23ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.603589"], ["updated_at", "2016-04-12 00:03:20.603589"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.619272"], ["updated_at", "2016-04-12 00:03:20.619272"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.635972"], ["updated_at", "2016-04-12 00:03:20.635972"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.662515"], ["updated_at", "2016-04-12 00:03:20.662515"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:03:20.678722"], ["updated_at", "2016-04-12 00:03:20.678722"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:03:20 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.1ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.223085"], ["updated_at", "2016-04-12 00:04:17.223085"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (8.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.283063"], ["updated_at", "2016-04-12 00:04:17.283063"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.299406"], ["updated_at", "2016-04-12 00:04:17.299406"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.9ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.317597"], ["updated_at", "2016-04-12 00:04:17.317597"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.343763"], ["updated_at", "2016-04-12 00:04:17.343763"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:04:17.360729"], ["updated_at", "2016-04-12 00:04:17.360729"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:04:17 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.6ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.333943"], ["updated_at", "2016-04-12 00:06:39.333943"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.382184"], ["updated_at", "2016-04-12 00:06:39.382184"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.398743"], ["updated_at", "2016-04-12 00:06:39.398743"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.416066"], ["updated_at", "2016-04-12 00:06:39.416066"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.2ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.442863"], ["updated_at", "2016-04-12 00:06:39.442863"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:06:39.459331"], ["updated_at", "2016-04-12 00:06:39.459331"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:06:39 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.5ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (4.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "merchants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "merchants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:45.923037"], ["updated_at", "2016-04-12 00:08:45.923037"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:45 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.3ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:45.971492"], ["updated_at", "2016-04-12 00:08:45.971492"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:45 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.3ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:45.988804"], ["updated_at", "2016-04-12 00:08:45.988804"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:45 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.5ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:46.006400"], ["updated_at", "2016-04-12 00:08:46.006400"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:46 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:46.032800"], ["updated_at", "2016-04-12 00:08:46.032800"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:46 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.7ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:46.050524"], ["updated_at", "2016-04-12 00:08:46.050524"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:46 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'rails_engine_test'
+  [1m[36m (5.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "merchants"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.0ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.577820"], ["updated_at", "2016-04-12 00:08:58.577820"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.8ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.632150"], ["updated_at", "2016-04-12 00:08:58.632150"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[36mMerchant Load (0.4ms)[0m  [1mSELECT "merchants".* FROM "merchants"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.649291"], ["updated_at", "2016-04-12 00:08:58.649291"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#index as JSON
+  [1m[35mMerchant Load (0.4ms)[0m  SELECT "merchants".* FROM "merchants"
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.666201"], ["updated_at", "2016-04-12 00:08:58.666201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.692543"], ["updated_at", "2016-04-12 00:08:58.692543"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mMerchant Load (0.6ms)[0m  SELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "merchants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Merchant"], ["created_at", "2016-04-12 00:08:58.710766"], ["updated_at", "2016-04-12 00:08:58.710766"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/api/v1/merchants/1.json" for 127.0.0.1 at 2016-04-11 18:08:58 -0600
+Processing by Api::V1::MerchantsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchant Load (0.3ms)[0m  [1mSELECT  "merchants".* FROM "merchants" WHERE "merchants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "merchants" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."merchants" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "merchants" ENABLE TRIGGER ALL[0m
