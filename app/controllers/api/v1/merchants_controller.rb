@@ -12,20 +12,24 @@ module Api
       end
 
       def find
-        respond_with MerchantFinder.find(merchant_params)
+        respond_with Finder.find(controller,merchant_params)
       end
 
       def find_all
-        respond_with MerchantFinder.find_all(merchant_params)
+        respond_with Finder.find_all(controller,merchant_params)
       end
 
       def random
-        respond_with MerchantFinder.random
+        respond_with Finder.random(controller)
       end
 
       private
         def merchant_params
           params.permit(:id, :name, :created_at, :updated_at)
+        end
+
+        def controller
+          params[:controller]
         end
     end
   end
