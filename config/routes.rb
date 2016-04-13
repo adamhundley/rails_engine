@@ -32,7 +32,13 @@ Rails.application.routes.draw do
         get 'find_all', to: 'finder#index'
         get 'random', to: 'finder#random'
       end
-      resources :invoices, only: [:index, :show]
+      resources :invoices, only: [:index, :show] do
+        resources :transactions, only: [:index], module: "invoices"
+        resources :invoice_items, only: [:index], module: "invoices"
+        resources :items, only: [:index], module: "invoices"
+        resources :customer, only: [:index], module: "invoices"
+        resources :merchant, only: [:index], module: "invoices"
+      end
 
       namespace :invoice_items do
         get 'find', to: 'finder#show'
