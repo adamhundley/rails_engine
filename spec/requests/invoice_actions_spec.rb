@@ -39,14 +39,6 @@ RSpec.describe "InvoiceActions", type: :request do
       expect(response).to have_http_status(200)
     end
 
-    # it "has empty arry for unknown invoice" do
-    #   get '/api/v1/invoices/12'
-    #
-    #   response = json_body
-    #   expect(response).to have_http_status(404)
-    #   expect(response).to eq([])
-    # end
-
     it "renders json" do
       get '/api/v1/invoices/1'
       expect(response.content_type).to eq("application/json")
