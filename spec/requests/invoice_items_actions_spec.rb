@@ -24,7 +24,7 @@ RSpec.describe "InvoiceItemsActions", type: :request do
 
       expect(parsed_invoice_item.keys). to eq [:id, :item_id, :invoice_id, :quantity, :unit_price, :created_at, :updated_at]
       expect(parsed_invoice_item[:name]).to eq(@invoice_item[:name])
-      expect(parsed_invoice_item[:unit_price]).to eq(@invoice_item[:unit_price])
+      expect(parsed_invoice_item[:unit_price]).to eq(@invoice_item[:unit_price].to_s)
       expect(parsed_invoice_item[:merchant_id]).to eq(@invoice_item[:merchant_id])
     end
   end
@@ -51,7 +51,7 @@ RSpec.describe "InvoiceItemsActions", type: :request do
 
       expect(invoice_item[:id]).to eq(@invoice_item[:id])
       expect(invoice_item[:name]).to eq(@invoice_item[:name])
-      expect(invoice_item[:unit_price]).to eq(@invoice_item[:unit_price])
+      expect(invoice_item[:unit_price]).to eq(@invoice_item[:unit_price].to_s)
       expect(invoice_item[:quantity]).to eq(@invoice_item[:quantity])
       expect(invoice_item[:item_id]).to eq(@invoice_item[:item_id])
       expect(invoice_item[:invoice_id]).to eq(@invoice_item[:invoice_id])
@@ -104,8 +104,8 @@ RSpec.describe "InvoiceItemsActions", type: :request do
       invoice_items = json_body
 
       expect(invoice_items.count).to eq 2
-      expect(invoice_items.first[:unit_price]).to eq(@invoice_item1[:unit_price])
-      expect(invoice_items.last[:unit_price]).to eq(@invoice_item2[:unit_price])
+      expect(invoice_items.first[:unit_price]).to eq(@invoice_item1[:unit_price].to_s)
+      expect(invoice_items.last[:unit_price]).to eq(@invoice_item2[:unit_price].to_s)
       expect(invoice_items.first[:id]).to eq(@invoice_item1[:id])
       expect(invoice_items.last[:id]).to eq(@invoice_item2[:id])
     end
