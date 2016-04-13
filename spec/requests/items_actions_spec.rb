@@ -24,7 +24,7 @@ RSpec.describe "ItemsActions", type: :request do
 
       expect(parsed_item.keys). to eq [:id, :name, :unit_price, :merchant_id, :created_at, :updated_at, :description]
       expect(parsed_item[:name]).to eq(@item[:name])
-      expect(parsed_item[:unit_price]).to eq(@item[:unit_price])
+      expect(parsed_item[:unit_price]).to eq(@item[:unit_price].to_s)
       expect(parsed_item[:merchant_id]).to eq(@item[:merchant_id])
       expect(parsed_item[:description]).to eq(@item[:description])
     end
@@ -52,7 +52,7 @@ RSpec.describe "ItemsActions", type: :request do
 
       expect(item[:id]).to eq(@item[:id])
       expect(item[:name]).to eq(@item[:name])
-      expect(item[:unit_price]).to eq(@item[:unit_price])
+      expect(item[:unit_price]).to eq(@item[:unit_price].to_s)
     end
   end
 

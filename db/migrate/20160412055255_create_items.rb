@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     enable_extension("citext")
     create_table :items do |t|
       t.citext :name
-      t.string :unit_price
+      t.decimal :unit_price, precision: 8, scale: 2
       t.references :merchant, index: true, foreign_key: true
 
       t.timestamps null: false

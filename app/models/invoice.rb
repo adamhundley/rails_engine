@@ -6,7 +6,9 @@ class Invoice < ActiveRecord::Base
   has_many :items, through: :invoice_items
   validates :status, presence: true
 
+
   def self.random
     all.order("RANDOM()").first
   end
+
 end
