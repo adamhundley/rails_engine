@@ -5,6 +5,7 @@ RSpec.describe Item, type: :model do
     it { should validate_presence_of :name}
     it { should validate_presence_of :unit_price}
     it { should belong_to :merchant}
+    it { should have_many :invoice_items}
   end
 
   it "name can't be nil" do
@@ -26,5 +27,5 @@ RSpec.describe Item, type: :model do
     expect(item).to be_instance_of Item
     expect(item).to be_valid
   end
-  
+
 end

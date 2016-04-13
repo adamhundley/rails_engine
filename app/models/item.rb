@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :merchant
+  has_many :invoice_items
   validates :name, presence: true
   validates :unit_price, presence: true
 
