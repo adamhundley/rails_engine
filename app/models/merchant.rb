@@ -43,7 +43,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def failed_invoices
-    invoices.joins(:transactions).where("result = 'failed'")
+    invoices.joins(:transactions).where("result = 'failed'").group(:customer_id)
   end
 
   def self.most_items(quantity)
