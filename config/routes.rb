@@ -8,11 +8,14 @@ Rails.application.routes.draw do
         get 'random', to: 'finder#random'
         get 'most_revenue', to: 'revenue#index'
         get 'most_items', to: 'items_sold#index'
-        get 'revenue', to: 'revenue#show'
+        get 'revenue', to: 'revenue_by_date#show'
       end
       resources :merchants, only: [:index, :show] do
         resources :items, only: [:index], module: "merchants"
         resources :invoices, only: [:index], module: "merchants"
+        get 'revenue', to: 'merchants/revenue#show'
+        get 'favorite_customer', to: 'merchants/favorite_customer#show'
+        get 'customers_with_pending_invoices', to: 'merchants/customers_with_pending_invoices#index'
       end
 
       namespace :customers do
