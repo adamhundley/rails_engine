@@ -399,6 +399,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         1,
@@ -453,7 +454,7 @@
       "/Users/adamhundley/Turing/3module/projects/rails_engine/spec/support/api_helper.rb": [
         1,
         1,
-        61,
+        62,
         null,
         null,
         1,
@@ -468,8 +469,8 @@
         null,
         null,
         1,
-        201,
-        201,
+        204,
+        204,
         null,
         null,
         null
@@ -494,6 +495,11 @@
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        3,
+        null,
         null,
         1,
         3,
@@ -539,7 +545,7 @@
         1,
         1,
         null,
-        469,
+        514,
         null,
         1,
         3,
@@ -636,7 +642,7 @@
         1,
         1,
         null,
-        190,
+        199,
         null,
         1,
         3,
@@ -912,6 +918,38 @@
         null,
         1,
         1,
+        null,
+        null,
+        null
+      ],
+      "/Users/adamhundley/Turing/3module/projects/rails_engine/spec/requests/customer_business_intelligences_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        3,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -2408,6 +2446,17 @@
         null,
         null
       ],
+      "/Users/adamhundley/Turing/3module/projects/rails_engine/app/controllers/api/v1/customers/favorite_merchant_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/adamhundley/Turing/3module/projects/rails_engine/app/controllers/api/v1/customers/invoices_controller.rb": [
         1,
         1,
@@ -2802,6 +2851,6 @@
         null
       ]
     },
-    "timestamp": 1460599942
+    "timestamp": 1460602651
   }
 }
