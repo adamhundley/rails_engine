@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
 gem 'simplecov', :require => false, :group => :test
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
   gem 'pry-rails'
