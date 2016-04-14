@@ -6,13 +6,13 @@
 [Rails Engine](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/rails_engine.md#invoices) is a JSON API built with Ruby on Rails and Active Record.  There are a variety of endpoints on Etsy merchant and customer data.
 
 Please run the following commands in order to run the API locally on your machine.
-
-    `git clone git@github.com:adamhundley/rails_engine.git`
-    `cd rails_engine`
-    `bundle`
-    `rake db:create db:migrate`
-    `rake db:load_csv`
-
+```
+    git clone git@github.com:adamhundley/rails_engine.git
+    cd rails_engine
+    bundle
+    rake db:create db:migrate
+    rake db:load_csv
+```
 * Run the test suite with the command `rspec`
 
 * Fire up the server locally with the command `rails s`
@@ -20,19 +20,20 @@ Please run the following commands in order to run the API locally on your machin
 * Navigate to `localhost:3000/api/v1/:endpoint` on your browser
 
 To run the spec harness do the following
-
-    `git clone git@github.com:turingschool/rales_engine_spec_harness.git`
-    `cd rales_engine_spec_harness`
-    `bundle exec rake`
-
+```
+    git clone git@github.com:turingschool/rales_engine_spec_harness.git
+    cd rales_engine_spec_harness
+    bundle exec rake
+```
 ### Record Endpoints
-  `\merchants`
-  `\customers`
-  `\items`
-  `\invoices`
-  `\invoice_items`
-  `\transactions`
-
+```
+  \merchants
+  \customers
+  \items
+  \invoices
+  \invoice_items
+  \transactions
+```
 #### Index of Record
 
 Each data category includes an `index` action which
