@@ -16,12 +16,16 @@ def top_merchants
   item2 = create(:item, name: "Item 2", unit_price: 5.54)
   item3 = create(:item, name: "Item 3", unit_price: 50.43)
 
-  invoice1 = create(:invoice, created_at: "2012-03-16 11:55:05")
-  invoice2 = create(:invoice)
-  invoice3 = create(:invoice, created_at: "2012-03-16 11:55:05")
-  invoice4 = create(:invoice)
-  invoice5 = create(:invoice)
-  invoice6 = create(:invoice, created_at: "2012-03-16 11:55:05")
+  customer1 = create(:customer, first_name: "Adam")
+  customer2 = create(:customer, first_name: "David")
+  customer3 = create(:customer, first_name: "Nick")
+
+  invoice1 = create(:invoice, created_at: "2012-03-16 11:55:05", customer_id: customer1.id)
+  invoice2 = create(:invoice, customer_id: customer2.id)
+  invoice3 = create(:invoice, created_at: "2012-03-16 11:55:05", customer_id: customer3.id)
+  invoice4 = create(:invoice, customer_id: customer1.id)
+  invoice5 = create(:invoice, customer_id: customer2.id)
+  invoice6 = create(:invoice, created_at: "2012-03-16 11:55:05", customer_id: customer3.id)
 
   invoice1.invoice_items << create(:invoice_item, quantity: 3, unit_price: 20.34, item_id: item1.id )
   invoice1.invoice_items << create(:invoice_item, quantity: 5, unit_price: 5.54, item_id: item2.id)

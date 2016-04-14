@@ -96,7 +96,7 @@ RSpec.describe "MerchantsBusinessItelligences", type: :request do
         revenue = json_body
 
         expect(revenue.keys). to eq [:total_revenue]
-        expect(revenue[:total_revenue]).to eq "123.86"
+        expect(revenue[:total_revenue]).to eq "212.58"
       end
     end
   end
