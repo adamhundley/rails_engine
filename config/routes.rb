@@ -33,10 +33,13 @@ Rails.application.routes.draw do
         get 'find', to: 'finder#show'
         get 'find_all', to: 'finder#index'
         get 'random', to: 'finder#random'
+        get 'most_revenue', to: 'most_revenue#index'
+        get 'most_items', to: 'most_items#index'
       end
       resources :items, only: [:index, :show] do
         resources :invoice_items, only: [:index], module: "items"
         resources :merchant, only: [:index], module: "items"
+        get 'best_day', to: "items/best_day#show"
       end
 
       namespace :invoices do
