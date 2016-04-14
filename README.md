@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/adamhundley/rails_engine.svg?branch=master)](https://travis-ci.org/adamhundley/rails_engine)
+[![Test Coverage](https://codeclimate.com/github/adamhundley/rails_engine/badges/coverage.svg)](https://codeclimate.com/github/adamhundley/rails_engine/coverage)
 [![Stories in Ready](https://badge.waffle.io/adamhundley/rails_engine.png?label=ready&title=Ready)](https://waffle.io/adamhundley/rails_engine)
 
 ## Rails Engine
