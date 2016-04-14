@@ -25,6 +25,7 @@ class Merchant < ActiveRecord::Base
     successful_invoices.sum("invoice_items.unit_price * invoice_items.quantity")
   end
 
+  
   def merchant_revenue_by_date(date)
     successful_invoices.where(created_at: date).sum("invoice_items.unit_price * invoice_items.quantity")
   end
