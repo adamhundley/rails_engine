@@ -27,12 +27,12 @@ To run the spec harness do the following
 ```
 ### Record Endpoints
 ```
-  \merchants
-  \customers
-  \items
-  \invoices
-  \invoice_items
-  \transactions
+  /merchants
+  /customers
+  /items
+  /invoices
+  /invoice_items
+  /transactions
 ```
 #### Index of Record
 
