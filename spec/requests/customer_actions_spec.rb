@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "CustomerActions", type: :request do
   describe "GET /api/v1/customers" do
     before(:each) do
-      @customer = create(:customer)
+      @customer = create(:customer, first_name: "Adam")
     end
 
     it "has 200 response code" do
@@ -23,13 +23,13 @@ RSpec.describe "CustomerActions", type: :request do
       parsed_customer = customers.first
 
       expect(parsed_customer.keys). to eq [:id, :first_name, :last_name, :created_at, :updated_at]
-      expect(parsed_customer[:name]).to eq(@customer[:name])
+      expect(parsed_customer[:first_name]).to eq("Adam")
     end
   end
 
   describe "GET /api/v1/customers/:id" do
     before(:each) do
-      @customer = create(:customer)
+      @customer = create(:customer, first_name: "Adam", last_name: "Hundley")
     end
 
     it "has 200 response code" do
@@ -49,8 +49,8 @@ RSpec.describe "CustomerActions", type: :request do
 
       expect(customer.keys). to eq [:id, :first_name, :last_name, :created_at, :updated_at]
       expect(customer[:id]).to eq(@customer[:id])
-      expect(customer[:first_name]).to eq(@customer[:first_name])
-      expect(customer[:last_name]).to eq(@customer[:last_name])
+      expect(customer[:first_name]).to eq "Adam"
+      expect(customer[:last_name]).to eq "Hundley"
     end
   end
 
